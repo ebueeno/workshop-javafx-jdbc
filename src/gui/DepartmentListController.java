@@ -89,8 +89,9 @@ public class DepartmentListController implements Initializable {
 			diologStage.setScene(new Scene(pane));
 			diologStage.setResizable(false);
 			diologStage.initOwner(parentStage);
-			diologStage.initModality(Modality.WINDOW_MODAL);
+			diologStage.initModality(Modality.WINDOW_MODAL);//Não deixa clicar na janela de tras
 			diologStage.showAndWait();
+			
 			
 		} catch (IOException e) {
 			Alerts.showAlert("IOExceptoin", "Error load View", e.getMessage(), AlertType.ERROR);
