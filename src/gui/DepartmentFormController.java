@@ -1,6 +1,7 @@
 package gui;
 
 import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +74,7 @@ public class DepartmentFormController implements Initializable {
 			Utils.currentStage(event).close();
 
 		} catch (ValidationException e) {
-			setErroMessages(e.geterrors());
+			setErroMessages(e.getErrors());
 		} catch (DbException e) {
 			Alerts.showAlert("Error saving object", null, e.getMessage(), AlertType.ERROR);
 
@@ -99,7 +100,7 @@ public class DepartmentFormController implements Initializable {
 			exception.addError("name", "Fild can't be empty");
 		}
 		obj.setName(txtName.getText());
-		if (exception.geterrors().size() > 0) {
+		if (exception.getErrors().size() > 0) {
 			throw exception;
 		}
 		return obj;
